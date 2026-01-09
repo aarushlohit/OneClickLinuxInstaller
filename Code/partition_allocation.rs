@@ -38,7 +38,7 @@ fn main() {
     let size_gb = loop {
         let input = prompt_input("Enter Linux partition size in GB (min 6): ");
         match input.parse::<i32>() {
-            Ok(s) if s >= 6 => break s,
+            Ok(s) if s < 6 => break s,
             _ => println!("[ERROR] Minimum size is 6GB"),
         }
     };
